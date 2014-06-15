@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hello World</title>
+
+<style>
+	p {border-style:none; border-width:2px; border-color: black; padding:2px; margin:8px;}
+	input[type="button"] {width: 280px; background-color: orange; font-size: 13px}
+	h3 {font-weight: bold;}
+</style>
+
+<script src='js/lib/jquery-1.9.1.min.js'></script>
+<script src='js/lib/salama/easyJsDomUtil.js'></script>
+<script src='js/lib/md5.js'></script>
+
+<script src='js/myCommon.js'></script>
+
+<script>
+function helloWorld(respType) {
+	$.ajax({
+		url: WEB_APP + "/cloudDataService.do",
+		type: "post",
+		dataType: "text",
+		data: {
+			serviceType: "com.salama.test.ws.service.HelloWorldService",
+			serviceMethod: "test1",
+			responseType: respType,
+			testParam: (new Date())
+		},
+		success: function(data) {
+			$('#result').text(data);
+		},
+		error: function(p0, p1, p2) {
+			$('#result').text('Error');
+		}
+	});
+}
+
+function testData1(respType) {
+	$.ajax({
+		url: WEB_APP + "/cloudDataService.do",
+		type: "post",
+		dataType: "text",
+		data: {
+			serviceType: "com.salama.test.ws.service.HelloWorldService",
+			serviceMethod: "testDataType1",
+			responseType: respType
+		},
+		success: function(data) {
+			$('#result').text(data);
+		},
+		error: function(p0, p1, p2) {
+			$('#result').text('Error');
+		}
+	});
+}
+
+function testData2(respType) {
+	$.ajax({
+		url: WEB_APP + "/cloudDataService.do",
+		type: "post",
+		dataType: "text",
+		data: {
+			serviceType: "com.salama.test.ws.service.HelloWorldService",
+			serviceMethod: "testDataType2",
+			responseType: respType
+		},
+		success: function(data) {
+			$('#result').text(data);
+		},
+		error: function(p0, p1, p2) {
+			$('#result').text('Error');
+		}
+	});
+}
+
+function testList1(respType) {
+	var cnt = Math.round(Math.random() * 20) + 2;
+	
+	$.ajax({
+		url: WEB_APP + "/cloudDataService.do",
+		type: "post",
+		dataType: "text",
+		data: {
+			serviceType: "com.salama.test.ws.service.HelloWorldService",
+			serviceMethod: "testListType1",
+			responseType: respType,
+			count: cnt
+		},
+		success: function(data) {
+			$('#result').text(data);
+		},
+		error: function(p0, p1, p2) {
+			$('#result').text('Error');
+		}
+	});
+}
+
+function testList2(respType) {
+	var cnt = Math.round(Math.random() * 20) + 2;
+	
+	$.ajax({
+		url: WEB_APP + "/cloudDataService.do",
+		type: "post",
+		dataType: "text",
+		data: {
+			serviceType: "com.salama.test.ws.service.HelloWorldService",
+			serviceMethod: "testListType2",
+			responseType: respType,
+			count: cnt
+		},
+		success: function(data) {
+			$('#result').text(data);
+		},
+		error: function(p0, p1, p2) {
+			$('#result').text('Error');
+		}
+	});
+}
+
+</script>
+
+</head>
+
+<body>
+	<h3><a href="/testWS/">Home</a></h1>
+	<div style="padding-left:10px;width: 100%">
+		<p>
+			<input type="button" onclick="helloWorld" value="hello world (Response in plain text)">
+		</p>
+	
+		<p>
+			<input type="button" onclick="testData1('xml')" value="test data type 1 (Response in xml)">
+			<input type="button" onclick="testData1('json')" value="test data type 1 (Response in json)">
+		</p>
+	
+		<p>
+			<input type="button" onclick="testData2('xml')" value="test data type 2 (Response in xml)">
+			<input type="button" onclick="testData2('json')" value="test data type 2 (Response in json)">
+		</p>
+		
+		<p>
+			<input type="button" onclick="testList1('xml')" value="test list type 1 (Response in xml)">
+			<input type="button" onclick="testList1('json')" value="test list type 1 (Response in json)">
+		</p>
+	
+		<p>
+			<input type="button" onclick="testList2('xml')" value="test list type 2 (Response in xml)">
+			<input type="button" onclick="testList2('json')" value="test list type 2 (Response in json)">
+		</p>
+	
+			<h3>Response of web service:</h3>
+			<textarea id="result" style="width:90%; height:500px;"></textarea>
+	
+	</div>
+</body>
+</html>
