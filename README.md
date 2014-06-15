@@ -35,7 +35,7 @@ An example that shows how easy to make RESTful web service by using <a href="htt
 	});
       </code></pre>
 
-      In java(server side):
+      <div>In java(server side):</div>
       
       <pre><code>
 		public class HelloWorldService {
