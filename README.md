@@ -4,7 +4,7 @@ REST-HelloWorld
 An example that shows how easy to make RESTful web service by using <a href="https://github.com/SalamaSoft/REST-framework">REST-framework</a>
 
 ------------------------------------------------------------------------------
-* <a href="https://github.com/SalamaSoft/REST-HelloWorld/blob/master/doc/DebugJavaWebInEclipse.html">A guide about how to debug java web in eclipse (For Java newbies)</a>
+* <a href="https://dl.dropboxusercontent.com/u/48157648/doc/REST-HelloWorld/DebugJavaWebInEclipse.html">A guide about how to debug java web in eclipse (For Java newbies)</a>
   After configuring eclipse correctly, you would be able to visit the page: http://localhost:8080/testWS/
   This page is entry of other demo page.
 
