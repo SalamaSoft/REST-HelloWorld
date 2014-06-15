@@ -9,9 +9,9 @@ An example that shows how easy to make RESTful web service by using <a href="htt
   This page is entry of other demo page.
 
 * This demo project will demonstrate features below:
+
   --- About how to invoke web service, how diliver parameters
-      (odinary type such as String, int, etc. Multipart type, it means file uploading)
-      
+      (odinary type such as String, int, etc. Multipart type, means uploading file)
       A typical code is like below:
       
      In JavaScript(client side):
