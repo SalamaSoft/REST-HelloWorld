@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hello World</title>
+
+<style>
+	p {border-style:none; border-width:2px; border-color: black; padding:2px; margin:8px;}
+	input[type="button"] {width: 280px; background-color: orange; font-size: 13px}
+	h3 {font-weight: bold;}
+</style>
+
+<script src='js/lib/jquery-1.9.1.min.js'></script>
+<script src='js/lib/salama/easyJsDomUtil.js'></script>
+<script src='js/lib/md5.js'></script>
+<script src="js/lib/easyUpload.js"></script>
+<script src='js/myCommon.js'></script>
+
+<script>
+function fileChanged() {
+	easyUpload.upload({
+		form: $('#uploadForm'),
+		url: WEB_APP + "/cloudDataService.do",
+		data: {
+			serviceType: "com.salama.test.ws.service.UploadAndDownloadService",
+			serviceMethod: "upload1",
+		},
+		success: function(data) {
+			$('#uploadedFileId').val(data);
+			alert("Uploading succeeded");
+		},
+		error: function() {
+			alert("Uploading failed");
+		}
+	});
+}
+
+function downloadAndShow() {
+	$('#img1')[0].src = WEB_APP + "/cloudDataService.do" + "?" 
+		+ "serviceType=com.salama.test.ws.service.UploadAndDownloadService&serviceMethod=download1&fileId=" 
+		+ $('#uploadedFileId').val();
+}
+
+</script>
+
+</head>
+
+<body>
+	<h3><a href="/testWS/">Home</a></h1>
+	<div style="padding-left:10px; width:100%;">
+		<form id="uploadForm">
+			<p>
+				<label>Upload image:</label>
+				<input type="file" name="file1" onchange="fileChanged()"/>
+			</p>
+		</form>
+		<br />
+		
+		<input type="hidden" id="uploadedFileId"/>
+		
+		
+		<p>
+			<input type="button" onclick="downloadAndShow()" value="download and show image">
+		</p>
+
+		<p style="border-width:2px; border-color: black;">
+			<img id="img1" style="min-width: 100px;"/>
+		</p>
+	
+	</div>
+</body>
+</html>

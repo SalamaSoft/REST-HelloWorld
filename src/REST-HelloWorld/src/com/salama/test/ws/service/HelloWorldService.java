@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.chikuhou.mfs.common.util.MD5Util;
+import com.beef.util.crypto.MD5Util;
 import com.salama.service.clouddata.core.annotation.ReturnValueConverter;
 import com.salama.test.ws.data.TestData1;
 import com.salama.test.ws.data.TestData2;

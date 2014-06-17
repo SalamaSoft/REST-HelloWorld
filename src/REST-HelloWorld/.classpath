@@ -21,7 +21,6 @@
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/JSON.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/log4j-1.2.16.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/MetoXML.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/MFSUtil.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/mysql-connector-java-5.1.30-bin.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/ognl-2.6.11.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/oro-2.0.8.jar"/>
@@ -41,5 +40,9 @@
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/velocity-1.4.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/velocity-dep-1.4.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/velocity-tools-1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/beef_in_jp/Documents/apache-tomcat-7.0.34/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/easy-crypto-util.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/SalamaServiceAuth.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/EasyImageUtil.jar"/>
 	<classpathentry kind="output" path="webapp/WEB-INF/classes"/>
 </classpath>
