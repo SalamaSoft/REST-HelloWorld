@@ -40,8 +40,9 @@
 
 			//create temp frame and load it -----------------			
 			var domIFrame = $(iframeHtml);
-			var isFirstLoad = true;
-			
+			$('iframe[uploadHiddenFrame="true"]').remove();
+			$(document.body).append(domIFrame);
+
 			$(domIFrame).unbind('load');
 			$(domIFrame).bind('load', function () {
 				var response = null;
@@ -53,35 +54,27 @@
 					}
 
 					//The event of loading first time is caused by $(body).append
-					if(!isFirstLoad) {
-						if( success != null) {
-							success(response);
-						}
+					if( success != null) {
+						success(response);
 					}
 				} catch (e) {
 					response = undefined;
 				}
 
-				if(isFirstLoad) {
-					isFirstLoad = false;
-				} else {
-					$('iframe[uploadHiddenFrame="true"]').remove();
-					for(var paramName in data) {
-						$(form).find('input[name="' + paramName + '"]').remove();
-					}
+				//remove objs
+				$('iframe[uploadHiddenFrame="true"]').remove();
+				for(var paramName in data) {
+					$(form).find('input[name="' + paramName + '"]').remove();
+				}
 
-					if(response == undefined) {
-						if(error != null) {
-							error();
-						}
+				if(response == undefined) {
+					if(error != null) {
+						error();
 					}
 				}
 				
 			});
 
-			$('iframe[uploadHiddenFrame="true"]').remove();
-			
-			$(document.body).append(domIFrame);
 			form.submit();
 		}
 	}
