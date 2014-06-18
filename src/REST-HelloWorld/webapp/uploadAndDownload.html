@@ -55,7 +55,7 @@ function downloadAndSave() {
 <body>
 	<h3><a href="/testWS/">Home</a></h1>
 	<div style="padding-left:10px; width:100%;">
-		<form id="uploadForm">
+		<form id="uploadForm" enctype="multipart/form-data">
 			<p>
 				<label>Upload image:</label>
 				<input type="file" name="file1" onchange="fileChanged()"/>
