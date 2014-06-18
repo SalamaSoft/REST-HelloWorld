@@ -41,6 +41,13 @@ function downloadAndShow() {
 		+ $('#uploadedFileId').val();
 }
 
+function downloadAndSave() {
+	window.location = WEB_APP + "/cloudDataService.do" + "?" 
+		+ "serviceType=com.salama.test.ws.service.UploadAndDownloadService&serviceMethod=download2&fileId=" 
+		+ $('#uploadedFileId').val();
+}
+
+
 </script>
 
 </head>
@@ -61,6 +68,7 @@ function downloadAndShow() {
 		
 		<p>
 			<input type="button" onclick="downloadAndShow()" value="download and show image">
+			<input type="button" onclick="downloadAndSave()" value="download and save"><a id="downloadLink"></a>
 		</p>
 
 		<p style="border-width:2px; border-color: black;">

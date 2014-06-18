@@ -5,6 +5,7 @@ RemoteSystemsTempFiles/
 .DS_Store/
 Servers/
 bin/
+upload_img/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

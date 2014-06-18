@@ -1,12 +1,21 @@
 package com.salama.test.ws.service;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.w3c.tools.codec.Base64Encoder;
+
+import MetoXML.Cast.BaseTypesMapping;
 
 import com.salama.service.core.net.RequestWrapper;
 import com.salama.service.core.net.ResponseWrapper;
 import com.salama.service.core.net.http.ContentTypeHelper;
+import com.salama.service.core.net.http.HttpResponseWrapper;
 import com.salama.service.core.net.http.MultipartFile;
 import com.salama.service.core.net.http.MultipartRequestWrapper;
 import com.salama.test.ws.util.ServiceUtil;
@@ -56,6 +65,21 @@ public class UploadAndDownloadService {
 			} else {
 				response.setContentType(ContentTypeHelper.ImageJpeg);
 			}
+
+			response.setContentType(ContentTypeHelper.ApplicationOctetStream);
+			response.setDownloadFileName("test中文", "utf-8");
+			response.writeFile(file);
+		} catch(Throwable e) {
+			logger.error("", e);
+		}
+	}
+	
+	public static void download2(RequestWrapper request, ResponseWrapper response, String fileId) {
+		try {
+			File file = getFilePathByFileId(request, fileId);
+			
+			response.setContentType(ContentTypeHelper.ApplicationOctetStream);
+			response.setDownloadFileName(request, response, fileId);
 			
 			response.writeFile(file);
 		} catch(Throwable e) {
