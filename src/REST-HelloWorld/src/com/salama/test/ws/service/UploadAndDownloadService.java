@@ -49,7 +49,7 @@ public class UploadAndDownloadService {
 		}
 	}
 	
-	public static void download1(RequestWrapper request, ResponseWrapper response, String fileId) {
+	public static void downloadAndShow(RequestWrapper request, ResponseWrapper response, String fileId) {
 		try {
 			File file = getFilePathByFileId(request, fileId);
 			
@@ -66,15 +66,14 @@ public class UploadAndDownloadService {
 				response.setContentType(ContentTypeHelper.ImageJpeg);
 			}
 
-			response.setContentType(ContentTypeHelper.ApplicationOctetStream);
-			response.setDownloadFileName("test中文", "utf-8");
+			response.setDownloadFileName(request, response, fileId);
 			response.writeFile(file);
 		} catch(Throwable e) {
 			logger.error("", e);
 		}
 	}
 	
-	public static void download2(RequestWrapper request, ResponseWrapper response, String fileId) {
+	public static void downloadAndSave(RequestWrapper request, ResponseWrapper response, String fileId) {
 		try {
 			File file = getFilePathByFileId(request, fileId);
 			

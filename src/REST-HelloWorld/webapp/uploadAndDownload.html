@@ -36,15 +36,17 @@ function fileChanged() {
 }
 
 function downloadAndShow() {
-	$('#img1')[0].src = WEB_APP + "/cloudDataService.do" + "?" 
-		+ "serviceType=com.salama.test.ws.service.UploadAndDownloadService&serviceMethod=download1&fileId=" 
-		+ $('#uploadedFileId').val();
+	$('#img1')[0].src = WEB_APP + "/cloudDataService.do" 
+		+ "?" + "serviceType=com.salama.test.ws.service.UploadAndDownloadService"
+		+ "&" + "serviceMethod=downloadAndShow"
+		+ "&" + "fileId=" + $('#uploadedFileId').val();
 }
 
 function downloadAndSave() {
-	window.location = WEB_APP + "/cloudDataService.do" + "?" 
-		+ "serviceType=com.salama.test.ws.service.UploadAndDownloadService&serviceMethod=download2&fileId=" 
-		+ $('#uploadedFileId').val();
+	window.location = WEB_APP + "/cloudDataService.do" 
+		+ "?" + "serviceType=com.salama.test.ws.service.UploadAndDownloadService"
+		+ "&" + "serviceMethod=downloadAndSave"
+		+ "&" + "fileId=" + $('#uploadedFileId').val();
 }
 
 
