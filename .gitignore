@@ -6,6 +6,7 @@ RemoteSystemsTempFiles/
 Servers/
 bin/
 upload_img/
+classes/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
