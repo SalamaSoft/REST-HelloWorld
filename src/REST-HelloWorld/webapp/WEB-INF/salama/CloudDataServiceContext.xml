@@ -7,7 +7,7 @@
 			<appId>testWS</appId>
 			<basePackage>com.salama.test.ws</basePackage>
 			<exposedPackage>com.salama.test.ws.service</exposedPackage>
-			<dbConnectionJNDIName>jdbc/test</dbConnectionJNDIName>
+			<dbConnectionJNDIName>jdbc/rest_helloworld</dbConnectionJNDIName>
 		</CloudDataAppConfig>
 	</appConfigs>
 </CloudDataServiceContext>
