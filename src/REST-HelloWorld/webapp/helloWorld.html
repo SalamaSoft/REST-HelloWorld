@@ -6,7 +6,7 @@
 
 <style>
 	p {border-style:none; border-width:2px; border-color: black; padding:2px; margin:8px;}
-	input[type="button"] {width: 280px; background-color: orange; font-size: 13px}
+	p>input[type="button"] {width: 280px; background-color: orange; font-size: 13px}
 	h3 {font-weight: bold;}
 </style>
 
@@ -124,7 +124,10 @@ function testList2(respType) {
 </head>
 
 <body>
-	<h3><a href="/testWS/">Home</a></h1>
+    <header>
+        <h3 style=""><a href="./">Home</a></h3>
+        <input type="button" onclick="viewSource()" value="View Html Source"/>
+    </header>
 	<div style="padding-left:10px;width: 100%">
 		<p>
 			<input type="button" onclick="helloWorld" value="hello world (Response in plain text)">
