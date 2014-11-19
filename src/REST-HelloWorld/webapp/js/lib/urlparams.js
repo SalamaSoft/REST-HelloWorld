@@ -3,7 +3,7 @@
 
 	function UrlParams() {
 		this.getValue = function (paramName){
-			var rs = new RegExp("(\&\?)" + paramName + "=([^\&]*)(\&|$)", "g").exec(window.document.location.href);   
+			var rs = new RegExp("(\&\?)" + paramName + "=([^\&#]*)(\&|$|#)", "g").exec(window.document.location.href);   
 		    if(rs){
 		    	return decodeURIComponent(rs[2]);
 		    } else {
