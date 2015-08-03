@@ -38,7 +38,7 @@
                  if(4 == this.readyState) {
                      //console.log("upload completed");
                      if(onCompleted) {
-                         onCompleted();
+                         onCompleted(this);
                      }
                  }
             };
