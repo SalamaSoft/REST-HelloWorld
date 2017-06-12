@@ -11,11 +11,11 @@ An example that shows how easy to make RESTful web service by using <a href="htt
 
 * This demo project will demonstrate features below:
 
-  --- About how to invoke web service, how diliver parameters
-      (odinary type such as String, int, etc. Multipart type, means uploading file). A typical code is like below:
+  --- Invoke the web service
+      (odinary type such as String, int, etc. Multipart type which is uploading file). A typical code is like below:
      <br/>In JavaScript(client side):
      <br/>
-     
+<code>     
       $.ajax({
 		url: WEB_APP + "/cloudDataService.do",
 		type: "post",
@@ -35,23 +35,19 @@ An example that shows how easy to make RESTful web service by using <a href="htt
 	});
 </code>
 
-      In java(server side):<br/>
-      
-
+      In java(server side):
+<code>      
 		public class HelloWorldService {
 		
 			public static String test1(String testParam) {
 				return "hellow world! \n" + testParam;
 			}
 		}
- 
-  --- About how to load xml data into html in an easy way
-      (There is a nice way and only xml format can do like this)
-      
-  --- About how to make login and control the access privilege
-      In this framework it does not use the traditional way that stores login info in HttpSession or Cookie.
-      A wrapped container provides methods to allocate ticket(also called "access token" in some web site), get/set session objects, etc, 
-      it is agile to change persistence base, e.g., storing in Redis. 
+</code>
+
+  --- Load xml data into html dom in my way
   
-  --- About how to configure wrapped session(to store some key-values) that persist in Redis.
-      (Just config and need no more code, and that is also open source)
+  --- Handle login and access control by 'authTicket'
+      In this framework it does not use the traditional way that stores login info in HttpSession.
+      A wrapped container provides methods to allocate ticket(also called "access token" in some documents), get/set session objects, etc, 
+      the operation is abstract and data could be stored in different place, e.g., stored in Redis. 
