@@ -16,7 +16,7 @@ An example that shows how easy to make RESTful web service by using <a href="htt
      <br/>In JavaScript(client side):
      <br/>
 <pre>
-      $.ajax({
+	$.ajax({
 		url: WEB_APP + "/cloudDataService.do",
 		type: "post",
 		dataType: "text",
@@ -36,8 +36,8 @@ An example that shows how easy to make RESTful web service by using <a href="htt
 </pre>
 
       In java(server side):
-<pre>      
-		public class HelloWorldService {
+<pre>
+	public class HelloWorldService {
 		
 			public static String test1(String testParam) {
 				return "hellow world! \n" + testParam;
