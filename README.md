@@ -15,7 +15,7 @@ An example that shows how easy to make RESTful web service by using <a href="htt
       (odinary type such as String, int, etc. Multipart type which is uploading file). A typical code is like below:
      <br/>In JavaScript(client side):
      <br/>
-<code>     
+<pre>
       $.ajax({
 		url: WEB_APP + "/cloudDataService.do",
 		type: "post",
@@ -33,17 +33,17 @@ An example that shows how easy to make RESTful web service by using <a href="htt
 			$('#result').text('Error');
 		}
 	});
-</code>
+</pre>
 
       In java(server side):
-<code>      
+<pre>      
 		public class HelloWorldService {
 		
 			public static String test1(String testParam) {
 				return "hellow world! \n" + testParam;
 			}
 		}
-</code>
+</pre>
 
   --- Load xml data into html dom in my way
   
