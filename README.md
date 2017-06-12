@@ -37,8 +37,7 @@ An example that shows how easy to make RESTful web service by using <a href="htt
 
       In java(server side):
 <pre>
-	public class HelloWorldService {
-		
+	public class HelloWorldService {		
 			public static String test1(String testParam) {
 				return "hellow world! \n" + testParam;
 			}
@@ -48,6 +47,7 @@ An example that shows how easy to make RESTful web service by using <a href="htt
   --- Load xml data into html dom in my way
   
   --- Handle login and access control by 'authTicket'
+  
       In this framework it does not use the traditional way that stores login info in HttpSession.
       A wrapped container provides methods to allocate ticket(also called "access token" in some documents), get/set session objects, etc, 
       the operation is abstract and data could be stored in different place, e.g., stored in Redis. 
