@@ -34,7 +34,7 @@
 			} else {
 				xmlRootNode = args.dataListXml;
 			}
-			var xmlRowNodes = $(xmlRootNode).find(args.dataXmlNodeName);
+			var xmlRowNodes = $(xmlRootNode).children(args.dataXmlNodeName);
 		    
 		    var tempNode;
 		    var length = xmlRowNodes.length;
