@@ -6,7 +6,7 @@ An example that shows how easy to make RESTful web service by using <a href="htt
 ------------------------------------------------------------------------------
 * This demo is deployed online. <a href="http://www.salama.com.cn/REST-HelloWorld" target="_blank">see it online</a>
 * <a href="https://dl.dropboxusercontent.com/u/48157648/doc/REST-HelloWorld/DebugJavaWebInEclipse.html">A guide about how to debug java web in eclipse (For Java newbies)</a>
-  After configuring eclipse correctly, you would be able to visit the page: http://localhost:8080/testWS/
+  After configuring eclipse correctly, you would be able to visit the page: http://localhost:8080/test/
   This page is entry of other demo page.
 
 * This demo project will demonstrate features below:
